@@ -1,0 +1,319 @@
+---
+import Layout from "../layouts/Baselayout.astro";
+---
+
+<Layout>
+    <div class="phone">
+        <div class="phone__notch"></div>
+        <div class="phone__cont">
+            <header class="phone__header">
+                <div class="phone__header__left">
+                    <div class="phone__header__arrow"></div>
+                    <div class="phone__header__photo">
+                        <img src="/avatar.jpg" alt="avatar" />
+                    </div>
+                    <div class="phone__header__info">
+                        <h3 class="phone__header__name">Samuel Green</h3>
+                        <p class="phone__header__status">Available to Walk</p>
+                    </div>
+                </div>
+                <div class="phone__header__dots">
+                    <div class="phone__header__dot"></div>
+                    <div class="phone__header__dot"></div>
+                    <div class="phone__header__dot"></div>
+                </div>
+            </header>
+            <div class="phone__body">
+                <div class="phone__body__messagesLeft">
+                    <p class="phone__body__messageLeft">
+                        That sounds great. I’d be happy with that.
+                    </p>
+                    <p class="phone__body__messageLeft">
+                        Could you send over some pictures of your dog, please?
+                    </p>
+                </div>
+                <div class="phone__body__messagesRight">
+                    <div class="phone__body__messageRight__img">
+                        <img src="/dog-image-1.jpg" alt="dog" />
+                        <img src="/dog-image-2.jpg" alt="dog" />
+                        <img src="/dog-image-3.jpg" alt="dog" />
+                    </div>
+                    <p class="phone__body__messageRight">
+                        Here are a few pictures. She’s a happy girl!
+                    </p>
+                    <p class="phone__body__messageRight">Can you make it?</p>
+                </div>
+                <div class="phone__body__messagesLeft phone__body__messagesLeft--last">
+                    <p class="phone__body__messageLeft">
+                        She looks so happy! The time we discussed works. How
+                        long shall I take her out for?
+                    </p>
+                    <div class="phone__body__messagesLeft__items">
+                        <div class="phone__body__messagesLeft__item">
+                            <div class="item__left">
+                                <div class="item__circle"></div>
+                                <p class="item__text">30 minute walk</p>
+                            </div>
+                            <p class="item__price">$29</p>
+                        </div>
+                        <div class="phone__body__messagesLeft__item">
+                            <div class="item__left">
+                                <div class="item__circle"></div>
+                                <p class="item__text">1 hour walk</p>
+                            </div>
+                            <p class="item__price">$49</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone__textbar">
+                    <div class="phone__textbar__bar">
+                        <p class="phone__textbar__placeholder">Type a message...</p>
+                        <div class="phone__textbar__send">
+                            <div class="phone__textbar__send__item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+
+    :root {
+        font-size: 10px;
+    }
+    @media (width > 800px) {
+        :root {
+            font-size: 11px;
+        }
+    }
+    .phone {
+        margin-top: 5rem;
+        background-color: var(--white);
+        max-width: 24rem;
+        max-height: 1000px;
+        border-radius: 3rem;
+        padding: 1rem;
+        position: relative;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        @media (width > 800px) {
+            max-width: 265px;
+            margin: 0;
+        }
+        .phone__notch {
+            width: 50%;
+            height: 2.6rem;
+            background-color: var(--white);
+            border-radius: 0 0 1.3rem 1.3rem;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .phone__cont {
+            background-color: var(--light-grayish-violet);
+            border-radius: 2rem;
+        }
+        .phone__header {
+            padding: 1.5rem 0 0 0;
+            height: 5.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(
+                to left,
+                var(--light-magenta),
+                var(--light-violet)
+            );
+            border-radius: 2rem 2rem .5rem .5rem;
+            .phone__header__photo {
+                display: flex;
+                img {
+                    width: 2rem;
+                    border-radius: 50%;
+                    border: 1px solid var(--white);
+                }
+            }
+            .phone__header__left {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                .phone__header__arrow {
+                    width:.6rem;
+                    height: .6rem;
+                    border-bottom: .2rem solid var(--white);
+                    border-left: .2rem solid var(--white);
+                    rotate: 45deg;
+                    margin-left: 1.5rem;
+                    margin-right: -.2rem;
+                }
+            }
+            .phone__header__dots {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-right: 1.5rem;
+                gap: .15rem;
+                    .phone__header__dot {
+                        width: .2rem;
+                        height: .2rem;
+                        border-radius: 50%;
+                        background-color: var(--white);
+                    }
+            }
+            .phone__header__info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .phone__header__name {
+                    margin: 0;
+                    color: var(--light-grayish-violet);
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+                .phone__header__status {
+                    margin: 0;
+                    color: var(--pale-violet);
+                    font-size: .8rem;
+                }
+            }
+        }
+        .phone__body {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-top: 1.5rem;
+            .phone__body__messagesRight {
+                align-self: flex-end;
+                padding-right: 1rem;
+                align-items: flex-end;
+                .phone__body__messageRight {
+                    margin: 0;
+                    color: var(--desaturated-dark-violet);
+                    padding: .6rem;
+                    background-color: var(--white);
+                    border-radius: 1rem 1rem .5rem 1rem;
+                    width: fit-content;
+                    font-size: .8rem;
+                    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+                }
+                .phone__body__messageRight__img {
+                    display: flex;
+                    gap: 1rem;
+                    img {
+                        border-radius: 1rem;
+                        width: 4rem;
+                    }
+                }
+            }
+            .phone__body__messagesLeft:not(.phone__body__messagesLeft--last), .phone__body__messagesRight {
+                width: 55%;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .phone__body__messagesLeft {
+                align-self: flex-start;
+                padding-left: 1rem;
+                .phone__body__messageLeft {
+                    margin: 0;
+                    padding: .6rem;
+                    background-color: var(--light-violet-white);
+                    color: var(--moderate-violet);
+                    width: fit-content;
+                    border-radius: 1rem 1rem 1rem .5rem;
+                    font-size: .8rem;
+                    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+                }
+            }
+            .phone__body__messagesLeft--last {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                .phone__body__messageLeft {
+                    width: 55%;
+                    
+                }
+            }
+            .phone__body__messagesLeft__items {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 75%;
+                .phone__body__messagesLeft__item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: .7rem;
+                    border-radius: 1rem 1rem 1rem .5rem;
+                    padding-right: 1.5rem;
+                    background: linear-gradient(
+                        to right,
+                        var(--light-magenta),
+                        var(--light-violet));
+                    p {
+                        font-size: .8rem;
+                        color: var(--white);
+                        margin: 0;
+                    }
+                    .item__text {
+                        color: var(--light-violet-white);
+                    }
+                    .item__left{
+                        display: flex;
+                        gap: 1rem;
+                    }
+                    .item__price {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+                    .item__circle {
+                        width: 1rem;
+                        height: 1rem;
+                        border-radius: 50%;
+                        border: 1px solid var(--very-light-magenta);
+                    }
+                }
+            }
+            .phone__textbar {
+                margin-bottom: 1rem;
+                padding: 0 1rem;
+                .phone__textbar__bar {
+                    background-color: var(--white);
+                    padding: .5rem;
+                    padding-left: 2rem;
+                    border-radius: 5rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .phone__textbar__placeholder {
+                        margin: 0;
+                        color: var(--grayish-blue);
+                        font-size: .8rem;
+                    }
+                    .phone__textbar__send {
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        border-radius: 50%;
+                        background-color: var(--very-dark-desaturated-violet);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .phone__textbar__send__item {
+                        display: inline-block;
+                        width: .5rem;
+                        height: .5rem; 
+                        border-top: .25rem solid white; 
+                        border-right: .25rem solid white; 
+                        transform: rotate(45deg);
+                        margin-left: -.25rem
+                    }
+                
+                }
+            }
+        }
+    }
+</style>

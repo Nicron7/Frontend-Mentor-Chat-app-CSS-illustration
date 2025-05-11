@@ -1,0 +1,125 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style>
+    :root {
+        /* colors */
+
+        /* Primary */
+
+        /* Text */
+
+        --pale-violet: hsl(276, 100%, 81%);
+        --moderate-violet: hsl(276, 55%, 52%);
+        --desaturated-dark-violet: hsl(271, 15%, 43%);
+        --grayish-blue: hsl(206, 6%, 79%);
+        --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+        --dark-grayish-violet: hsl(270, 7%, 64%);
+
+        /* Gradient */
+
+        --light-magenta: hsl(293, 100%, 63%);
+        --light-violet: hsl(264, 100%, 61%);
+
+        /* Secondary */
+
+        --white: hsl(0, 0%, 100%);
+        --light-grayish-violet: hsl(270, 20%, 96%);
+        --light-violet-white: hsl(272, 41%, 93%);
+        --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+        --very-light-magenta: hsl(289, 100%, 72%);
+
+        /* Typography */
+
+        font-size: 16px;
+        --font-family: "Rubik", sans-serif;
+    }
+
+    /* 1. Use a more-intuitive box-sizing model */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    /* 2. Remove default margin */
+    * {
+        margin: 0;
+    }
+    /* 3. Enable keyword animations */
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            interpolate-size: allow-keywords;
+        }
+    }
+    body {
+        /* 4. Add accessible line-height */
+        line-height: 1.5;
+        /* 5. Improve text rendering */
+        -webkit-font-smoothing: antialiased;
+		font-family: var(--font-family);
+        background-color: var(--white);
+        overflow-x: hidden;
+    }
+    /* 6. Improve media defaults */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+    /* 7. Inherit fonts for form controls */
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+    /* 8. Avoid text overflows */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+    /* 9. Improve line wrapping */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+    }
+    /*
+  		10. Create a root stacking context
+	*/
+    #root,
+    #__next {
+        isolation: isolate;
+    }
+</style>
