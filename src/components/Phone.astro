@@ -90,6 +90,11 @@ import Layout from "../layouts/Baselayout.astro";
             font-size: 11px;
         }
     }
+    @media (width > 1600px) {
+        :root {
+            font-size: 14px;
+        }
+    }
     .phone {
         margin-top: 5rem;
         background-color: var(--white);
@@ -102,6 +107,9 @@ import Layout from "../layouts/Baselayout.astro";
         @media (width > 800px) {
             max-width: 265px;
             margin: 0;
+        }
+        @media (width > 1600px) {
+            max-width: 325px;
         }
         .phone__notch {
             width: 50%;
