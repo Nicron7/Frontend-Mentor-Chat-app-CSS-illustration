@@ -24,44 +24,46 @@ import Layout from "../layouts/Baselayout.astro";
                 </div>
             </header>
             <div class="phone__body">
-                <div class="phone__body__messagesLeft">
-                    <p class="phone__body__messageLeft">
-                        That sounds great. I’d be happy with that.
-                    </p>
-                    <p class="phone__body__messageLeft">
-                        Could you send over some pictures of your dog, please?
-                    </p>
-                </div>
-                <div class="phone__body__messagesRight">
-                    <div class="phone__body__messageRight__img">
-                        <img src="/dog-image-1.jpg" alt="dog" />
-                        <img src="/dog-image-2.jpg" alt="dog" />
-                        <img src="/dog-image-3.jpg" alt="dog" />
+                <div class="phone__body__cont">
+                    <div class="phone__body__messagesLeft">
+                        <p class="phone__body__messageLeft">
+                            That sounds great. I’d be happy with that.
+                        </p>
+                        <p class="phone__body__messageLeft">
+                            Could you send over some pictures of your dog, please?
+                        </p>
                     </div>
-                    <p class="phone__body__messageRight">
-                        Here are a few pictures. She’s a happy girl!
-                    </p>
-                    <p class="phone__body__messageRight">Can you make it?</p>
-                </div>
-                <div class="phone__body__messagesLeft phone__body__messagesLeft--last">
-                    <p class="phone__body__messageLeft">
-                        She looks so happy! The time we discussed works. How
-                        long shall I take her out for?
-                    </p>
-                    <div class="phone__body__messagesLeft__items">
-                        <div class="phone__body__messagesLeft__item">
-                            <div class="item__left">
-                                <div class="item__circle"></div>
-                                <p class="item__text">30 minute walk</p>
-                            </div>
-                            <p class="item__price">$29</p>
+                    <div class="phone__body__messagesRight">
+                        <div class="phone__body__messageRight__img">
+                            <img src="/dog-image-1.jpg" alt="dog" />
+                            <img src="/dog-image-2.jpg" alt="dog" />
+                            <img src="/dog-image-3.jpg" alt="dog" />
                         </div>
-                        <div class="phone__body__messagesLeft__item">
-                            <div class="item__left">
-                                <div class="item__circle"></div>
-                                <p class="item__text">1 hour walk</p>
+                        <p class="phone__body__messageRight">
+                            Here are a few pictures. She’s a happy girl!
+                        </p>
+                        <p class="phone__body__messageRight">Can you make it?</p>
+                    </div>
+                    <div class="phone__body__messagesLeft phone__body__messagesLeft--last">
+                        <p class="phone__body__messageLeft">
+                            She looks so happy! The time we discussed works. How
+                            long shall I take her out for?
+                        </p>
+                        <div class="phone__body__messagesLeft__items">
+                            <div class="phone__body__messagesLeft__item">
+                                <div class="item__left">
+                                    <div class="item__circle"></div>
+                                    <p class="item__text">30 minute walk</p>
+                                </div>
+                                <p class="item__price">$29</p>
                             </div>
-                            <p class="item__price">$49</p>
+                            <div class="phone__body__messagesLeft__item">
+                                <div class="item__left">
+                                    <div class="item__circle"></div>
+                                    <p class="item__text">1 hour walk</p>
+                                </div>
+                                <p class="item__price">$49</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,8 +185,15 @@ import Layout from "../layouts/Baselayout.astro";
         .phone__body {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            padding-top: 1.5rem;
+            overflow: hidden;
+            .phone__body__cont {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1rem;
+                z-index: 10;
+            }
             .phone__body__messagesRight {
                 align-self: flex-end;
                 padding-right: 1rem;
@@ -280,6 +289,7 @@ import Layout from "../layouts/Baselayout.astro";
             .phone__textbar {
                 margin-bottom: 1rem;
                 padding: 0 1rem;
+                z-index: 20;
                 .phone__textbar__bar {
                     background-color: var(--white);
                     padding: .5rem;
