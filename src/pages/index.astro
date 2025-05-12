@@ -6,9 +6,10 @@ import Phone from "../components/Phone.astro";
 
 <Layout title="Frontend Mentor | Chat app CSS illustration">
 	<main class="hero">
-		<div class="hero__bg"></div>
+		<div class="hero__bg-desktop"></div>
 		<div class="hero__bg-dark"></div>
 		<section class="hero__cont">
+			<div class="hero__bg"></div>
 			<Phone />
 		</section>
 		<section class="desc">
@@ -30,16 +31,28 @@ import Phone from "../components/Phone.astro";
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		position: relative;
 	}
 	.hero__bg {
 		background: linear-gradient(to bottom, var(--light-magenta), var(--light-violet));
 		width: 200%;
-		height: 200svh;
+		height: 200%;
 		position: absolute;
 		border-radius: 0 0 20rem 20rem;
-		top: -120%;
+		top: -115%;
 		left: -150%;
 		z-index: -1;
+	}
+	.hero__bg-desktop {
+		background: linear-gradient(to bottom, var(--light-magenta), var(--light-violet));
+		position: absolute;
+		z-index: -1;
+		display: none;
+		width: 37%;
+		left: -12.3%;
+		border-radius: 40rem;
+		height: 150svh;
+		top: -50%;
 	}
 	.hero__bg-dark {
 		background-color: var(--light-grayish-violet);
@@ -51,6 +64,7 @@ import Phone from "../components/Phone.astro";
 		right: -15%;
 		z-index: -1;
 		display: none;
+		
 	}
 	
 	.desc {
@@ -87,11 +101,10 @@ import Phone from "../components/Phone.astro";
 			min-height: 100svh;
 		}
 		.hero__bg {
-			width: 37%;
-			left: -12.3%;
-			border-radius: 40rem;
-			height: 150svh;
-			top: -50%;
+			display: none;
+		}
+		.hero__bg-desktop {
+			display: block;
 		}
 		.hero__bg-dark {
 			display: block;
